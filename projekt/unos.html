@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BBC PWA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ana Ilić">
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        .error {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-bar">
+            <a href="index.php" class="logo"><img src="slike/BBC_Logo_2021.svg.png"
+                    style="width: 100px; background-color: white;" /></a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.php" class="nav-link">News</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sports.php" class="nav-link">Sport</a>
+                </li>
+                <li class="nav-item">
+                    <a href="administracija.php" class="nav-link">Administration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="unos" class="nav-link">Add</a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="container forma" style="padding-bottom:20%;">
+        <form method="post" action="skripta.php" id="myForm">
+            <label for="naslov">Title:</label><br />
+            <input type="text" id="naslov" name="naslov"><br>
+            <span id="error1"></span><br />
+
+            <label for="sazetak">Description:</label><br />
+            <textarea id="sazetak" name="sazetak" rows="10"></textarea><br>
+            <span id="error2"></span><br />
+
+            <label for="tekst">Text:</label><br />
+            <textarea id="tekst" name="tekst" rows="20"></textarea><br>
+            <span id="error3"></span><br />
+
+            <label for="kategorija">Category:</label><br />
+            <select id="kategorija" name="kategorija">
+                <option value="">Select category</option>
+                <option value="News">News</option>
+                <option value="Sport">Sports</option>
+                <option value="Kultura">Culture</option>
+                <option value="Fun">Fun</option>
+            </select><br>
+            <span id="error4"></span><br />
+
+            <label for="slika">Photo:</label><br />
+            <input type="file" id="slika" name="slika"><br>
+            <span id="error5"></span><br />
+
+            <label for="obavijest">Should the notification be displayed on the page?</label>
+            <input type="checkbox" id="obavijest" name="obavijest"><br>
+            <br />
+
+            <input type="submit" value="Send" class="send" id="gumb">
+        </form>
+    </section>
+
+    <footer>
+        <div class="container fot">
+            <p>Coded by Ana Ilić, 2023</p>
+            <p>ailic@tvz.hr</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("gumb").addEventListener("click", function (event) {
+            event.preventDefault();
+
+            var naslov = document.getElementById("naslov");
+            var sazetak = document.getElementById("sazetak");
+            var tekst = document.getElementById("tekst");
+            var kategorija = document.getElementById("kategorija");
+            var slika = document.getElementById("slika");
+
+            var errors = [];
+
+            if (naslov.value.length < 5 || naslov.value.length > 50) {
+                errors.push("Title must be between 5 and 50 characters");
+                naslov.classList.add("error");
+            } else {
+                naslov.classList.remove("error");
+            }
+
+            if (sazetak.value.length < 10 || sazetak.value.length > 110) {
+                errors.push("Description must be between 10 and 110 characters");
+                sazetak.classList.add("error");
+            } else {
+                sazetak.classList.remove("error");
+            }
+
+            if (tekst.value === "") {
+                errors.push("Text field cannot be empty");
+                tekst.classList.add("error");
+            } else {
+                tekst.classList.remove("error");
+            }
+
+            if (kategorija.value === "") {
+                errors.push("Please select a category");
+                kategorija.classList.add("error");
+            } else {
+                kategorija.classList.remove("error");
+            }
+
+            if (slika.value === "") {
+                errors.push("Please choose a photo");
+                slika.classList.add("error");
+            } else {
+                slika.classList.remove("error");
+            }
+
+            if (errors.length > 0) {
+                event.preventDefault();
+                displayErrors(errors);
+            } else {
+                document.getElementById("myForm").submit();
+            }
+        });
+
+        function displayErrors(errors) {
+            var errorElements = document.querySelectorAll("span[id^=error]");
+            errorElements.forEach(function (element) {
+                element.innerHTML = "";
+            });
+
+            errors.forEach(function (error, index) {
+                var errorElement = document.getElementById("error" + (index + 1));
+                errorElement.innerHTML = error;
+            });
+        }
+    </script>
+</body>
+
+</html>

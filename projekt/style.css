@@ -1,0 +1,422 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.traka {
+    background-color: rgb(195, 195, 42);
+}
+
+p {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.h3 {
+    padding: 24px;
+}
+
+img {
+    width: 100%;
+}
+
+#kategorija {
+    padding: 8px 16px;
+    font-size: 18px;
+    margin-top: 1%;
+}
+
+#slika {
+    margin-top: 1%;
+}
+
+#obavijest {
+    padding-left: 2%;
+}
+
+header {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: rgb(80, 76, 76);
+    font-weight: bolder;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.nav-bar {
+    min-height: 70px;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    padding: 0 24px;
+
+
+}
+
+header {
+    background-color: black;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    padding-left: 2%;
+    padding-bottom: 0.2%;
+
+}
+
+.nav-bar ul li a {
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    border-left: solid 1px;
+    border-color: white;
+
+}
+
+
+
+.nav-link,
+header a {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: pink;
+}
+
+header a:hover {
+    color: pink;
+}
+
+
+
+footer {
+    margin-top: 20%;
+}
+
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bolder;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.fot {
+    justify-content: center;
+    flex-direction: column;
+    padding: 1%;
+}
+
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+
+
+
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.forma {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
+
+form {
+    padding: 0px 24px;
+}
+
+#naslov {
+    width: 800px;
+    height: 32px;
+}
+
+#sazetak,
+#tekst {
+    width: 800px;
+}
+
+form label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.send {
+    padding: 8px 32px;
+    font-size: 18px;
+    background-color: green;
+    color: white;
+}
+
+
+
+
+.work h3 {
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 24px;
+    color: rgb(61, 55, 55);
+    font-weight: lighter;
+    text-align: center;
+}
+
+.work div {
+    width: 50%;
+}
+
+.wel {
+    margin-top: 15%;
+
+}
+
+.news {
+    margin-top: 5%;
+    padding: 0px 24px;
+
+}
+
+.clanak {
+    flex-direction: column;
+}
+
+.clanak p,
+.clanak h3 {
+    padding: 16px 24px;
+    font-size: 24px;
+}
+
+h1 {
+    padding: 0px 24px;
+}
+
+.ptica img {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 0px 24px;
+}
+
+.zuto {
+    margin-top: 70px;
+    background-color: rgb(202, 202, 39);
+    margin-bottom: 16px;
+}
+
+.news1 {
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+}
+
+.red {
+    border-left: solid 8px;
+    border-color: red;
+    padding-left: 8px;
+}
+
+.yellow {
+    border-left: solid 8px;
+    border-color: yellow;
+    padding-left: 8px;
+}
+
+
+
+.vijesti {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    flex-wrap: wrap;
+
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 30%;
+}
+
+.post h2 {
+    padding: 3% 0%;
+}
+
+
+
+
+.me div {
+    width: 60%;
+}
+
+.ill {
+    flex-wrap: wrap;
+    padding: 0px 24px;
+    margin-top: 10%;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:768px) {
+    .hamburger {
+        display: block;
+
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        color: white;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        height: 100%;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-bar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .l {
+        width: 100%;
+
+    }
+
+    .vijesti {
+        flex-direction: column;
+    }
+
+    .vijesti article {
+        width: 100%;
+    }
+
+
+
+    .work {
+        flex-wrap: wrap;
+    }
+
+    .work a {
+        width: 100%;
+    }
+
+
+
+}
